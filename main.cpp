@@ -2,6 +2,7 @@
 
 #include "Book.hpp"
 #include "User.hpp"
+#include "Library.hpp"
 
 int main()
 {
