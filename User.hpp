@@ -13,6 +13,8 @@ class User
         void addBook(const Book& book);
         void removeBook(const Book& book);
         Book getBorrowedBooks();
+        std::string getUserName() const;
+        std::string getUserSurname() const;
 
     private:
         long user_id;

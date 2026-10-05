@@ -10,8 +10,8 @@
 class Library
 {
     public:
-        void newBook();
-        void newUser();
+        void newBook(Book book);
+        void newUser(User user);
         void getAllBooks();
         void getAllUsers();
         void findBookWithAuthor(const Book& author);
@@ -21,6 +21,7 @@ class Library
 
     private:
         std::vector<Book> library_book_storage;
+        std::vector<Book> library_borrowed_books;
         std::vector<User> library_user_storage;
 
 };

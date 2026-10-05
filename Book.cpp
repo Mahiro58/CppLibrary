@@ -27,6 +27,15 @@ bool Book::getStatus() const{
     return isAvailable;
 }
 
+std::string Book::showStatus(){
+    if (isAvailable == true){
+        return "Dostepna";
+    }
+    else{
+        return "Niedostepna";
+    }
+}
+
 void Book::changeStatus(){
     if(isAvailable == true){
         isAvailable = false;
