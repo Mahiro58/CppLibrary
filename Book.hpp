@@ -8,11 +8,11 @@ class Book
 {
     public:
         Book(long id, const std::string& title, const std::string& author, int year);
-        long getId();
-        std::string getTitle();
-        std::string getAuthor();
-        int getYear();
-        bool getStatus();
+        long getId() const;
+        std::string getTitle() const;
+        std::string getAuthor() const;
+        int getYear() const;
+        bool getStatus() const;
         void changeStatus(); //simpe function to change book's available status.
 
     private:

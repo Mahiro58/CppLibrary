@@ -7,23 +7,23 @@ Book::Book(long id, const std::string& title, const std::string& author, int yea
     std::cout<<"Utworzono nowa ksiazke."<<std::endl;
 }
 
-long Book::getId(){
+long Book::getId() const{
     return book_id;
 }
 
-std::string Book::getTitle(){
+std::string Book::getTitle() const{
     return book_title;
 }
 
-std::string Book::getAuthor(){
+std::string Book::getAuthor() const{
     return book_author;
 }
 
-int Book::getYear(){
+int Book::getYear() const{
     return book_year;
 }
 
-bool Book::getStatus(){
+bool Book::getStatus() const{
     return isAvailable;
 }
 

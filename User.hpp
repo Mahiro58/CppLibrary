@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 #include "Book.hpp"
 
@@ -8,9 +9,9 @@
 class User
 {
     public:
-        User(long id, std::string name, std::string surname);
-        void addBook();
-        void removeBook();
+        User(long id, const std::string& name, const std::string& surname);
+        void addBook(const Book& book);
+        void removeBook(const Book& book);
         Book getBorrowedBooks();
 
     private:
