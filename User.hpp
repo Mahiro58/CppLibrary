@@ -3,6 +3,8 @@
 
 #include "Book.hpp"
 
+// User class to make user objects and store books they borrowed.
+
 class User
 {
     public:
