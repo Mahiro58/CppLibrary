@@ -10,13 +10,13 @@
 class Library
 {
     public:
-        void newBook(Book book);
-        void newUser(User user);
-        void getAllBooks();
-        void getAllUsers();
-        void findBookWithAuthor(const Book& author);
-        void findBookWithTitle(const Book& title);
-        void borrowBook();
+        void newBook(Book book); // adds new book to database.
+        void newUser(User user); // adds new user to database.
+        void getAllBooks(); // shows all books in database.
+        void getAllUsers(); // shows all users in database.
+        void findBookWithAuthor(std::string author); // a function to show author's all books in database.
+        void findBookWithTitle(std::string title); // a function to show books with title.
+        void borrowBook(); 
         void returnBook();
 
     private:

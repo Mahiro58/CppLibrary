@@ -26,3 +26,37 @@ void Library::getAllUsers(){
         std::cout<<"Lp."<<number<<" "<<user.getUserName()<<" "<<user.getUserSurname()<<std::endl;
     }
 }
+
+void Library::findBookWithAuthor(std::string author){
+    std::cout<<"Lista ksiazek autora "<<author<<":\n";
+    int number = 0;
+    for (Book check_book : library_book_storage){
+        if(author == check_book.getAuthor()){
+            number++;
+            std::cout<<"Lp."<<number<<" "<<check_book.getTitle()<<std::endl;
+        }
+    }
+    if(number == 0){
+        std::cout<<"Nie znaleziono zadnych ksiazek.\n";
+    }
+    else{
+        std::cout<<"To wszystkie znalezione ksiazki.\n";
+    }
+}
+
+void Library::findBookWithTitle(std::string title){
+    std::cout<<"Lista ksiazek o tytule "<<title<<":\n";
+    int number = 0;
+    for (Book check_book : library_book_storage){
+        if(check_book.getTitle() == title){
+            number++;
+            std::cout<<"Lp."<<number<<" "<<check_book.getTitle()<<" "<<check_book.getAuthor()<<std::endl;
+        }
+    }
+    if(number == 0){
+        std::cout<<"Nie znaleziono zadnych ksiazek.\n";
+    }
+    else{
+        std::cout<<"To wszystkie znalezione ksiazki.\n";
+    }
+}
