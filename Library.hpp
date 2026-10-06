@@ -16,8 +16,8 @@ class Library
         void getAllUsers(); // shows all users in database.
         void findBookWithAuthor(std::string author); // a function to show author's all books in database.
         void findBookWithTitle(std::string title); // a function to show books with title.
-        void borrowBook(); 
-        void returnBook();
+        void borrowBook(const Book& book); // adds Book object to library_borrowed_books database.
+        void returnBook(long id); // removes Book object from library_borrowed_books database base on book's id.
 
     private:
         std::vector<Book> library_book_storage;

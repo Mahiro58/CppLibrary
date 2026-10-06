@@ -60,3 +60,25 @@ void Library::findBookWithTitle(std::string title){
         std::cout<<"To wszystkie znalezione ksiazki.\n";
     }
 }
+
+void Library::borrowBook(const Book& book){
+    library_borrowed_books.push_back(book);
+    std::cout<<"Ksiazka "<<book.getTitle()<<" autora "<<book.getAuthor()<<" zostala wypozyczona.\n";
+}
+
+void Library::returnBook(long id){
+    int book_index = -1;
+    for(int i = 0; Book check_book : library_borrowed_books){
+        if(check_book.getId() == id){
+            book_index = i;
+        }
+        i++;
+    }
+    if(book_index < 0){
+        std::cout<<"Nie znaleziono ksiazki.\n";
+    }
+    else{
+        library_borrowed_books.erase(library_borrowed_books.begin() + book_index);
+        std::cout<<"Ksiazka zostala oddana.\n";
+    }
+}

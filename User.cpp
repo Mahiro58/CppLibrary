@@ -34,3 +34,7 @@ std::string User::getUserName() const{
 std::string User::getUserSurname() const{
     return user_surname;
 }
+
+void User::getBorrowedBooks(){
+    
+}

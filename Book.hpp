@@ -13,7 +13,7 @@ class Book
         std::string getAuthor() const;
         int getYear() const;
         bool getStatus() const;
-        std::string showStatus();
+        std::string showStatus(); // function to show book's available status, returns string.
         void changeStatus(); //simpe function to change book's available status.
 
     private:
