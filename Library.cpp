@@ -82,3 +82,19 @@ void Library::returnBook(long id){
         std::cout<<"Ksiazka zostala oddana.\n";
     }
 }
+
+void Library::displayBook(long id){
+    int number = 0;
+    for (Book book : library_borrowed_books){
+        if(id == book.getId()){
+            number++;
+            std::cout<<"Lp."<<number<<" "<<book.getTitle()<<" "<<book.getAuthor()<<std::endl;
+        }
+    }
+    if(number == 0){
+        std::cout<<"Brak wypozyczonych ksiazek.\n";
+    }
+    else{
+        std::cout<<"To wszystkie wypozyczone ksazki.\n";
+    }
+}

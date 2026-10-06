@@ -35,6 +35,8 @@ std::string User::getUserSurname() const{
     return user_surname;
 }
 
-void User::getBorrowedBooks(){
-    
+void User::getBorrowedBooks(Library& display, const std::vector<long>& user_storage){
+    for(const auto& book_id : user_storage){
+        display.displayBook(book_id);
+    }
 }
