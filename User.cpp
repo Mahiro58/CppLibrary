@@ -1,4 +1,5 @@
 #include "User.hpp"
+#include "Library.hpp"
 #include <iostream>
 
 User::User(long id, const std::string& name, const std::string& surname)
@@ -33,6 +34,10 @@ std::string User::getUserName() const{
 
 std::string User::getUserSurname() const{
     return user_surname;
+}
+
+long User::getId() const{
+    return user_id;
 }
 
 void User::getBorrowedBooks(Library& display, const std::vector<long>& user_storage){

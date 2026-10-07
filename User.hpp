@@ -3,9 +3,10 @@
 #include <string>
 
 #include "Book.hpp"
-#include "Library.hpp"
 
 // User class to make user objects and store books they borrowed.
+
+class Library;
 
 class User
 {
@@ -16,6 +17,7 @@ class User
         void getBorrowedBooks(Library& display, const std::vector<long>& user_storage); // function shows user's all borrowed books.
         std::string getUserName() const;
         std::string getUserSurname() const;
+        long getId() const;
 
     private:
         long user_id;

@@ -1,13 +1,12 @@
 #include <iostream>
 
-#include "Book.hpp"
-#include "User.hpp"
 #include "Library.hpp"
 
 int main()
 {
     bool condition = true;
     int chooice = 0;
+    Library admin;
     while (condition)
     {
         std::cout<<"Witaj w bibliotece.\n";
@@ -19,11 +18,49 @@ int main()
         std::cout<<"6. Spis wszystkich wypozyczonych ksiazek.\n";
         std::cout<<"7. Spis Twoich wypozyczonych ksiazek.\n";
         std::cout<<"9. Wyjscie.\n";
+        std::cin>>chooice;
 
         switch (chooice)
         {
-        case 1:
+        case 1: {
+            std::string user_name;
+            std::string user_surname;
+            std::cout<<"Podaj imie: ";
+            std::cin>>user_name;
+            std::cout<<"Podaj nazwisko: ";
+            std::cin>>user_surname;
+            admin.createUser(user_name, user_surname);            
             
+            break;
+        }
+
+        case 2:
+
+            break;
+
+        case 3:
+
+            break;
+
+        case 4:
+
+            break;
+
+        case 5:
+
+            break;
+
+        case 6:
+
+            break;
+
+        case 7:
+
+            break;
+
+        case 9:
+            std::cout<<"Do zobaczenia.\n";
+            condition = false;
             break;
         
         default:

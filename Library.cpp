@@ -98,3 +98,39 @@ void Library::displayBook(long id){
         std::cout<<"To wszystkie wypozyczone ksazki.\n";
     }
 }
+
+bool Library::checkUserId(long id)
+{
+    for (const User& user : library_user_storage)
+    {
+        if (user.getId() == id)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+long Library::makeUserId(){
+    long current_highest_id = 0;
+    if(library_user_storage.size() > 0){
+        for(User user : library_user_storage){
+            if(user.getId() > current_highest_id){
+                current_highest_id = user.getId();
+            }
+        }
+        return current_highest_id++;
+    }
+    else{
+        return 1;
+    }
+}
+
+void Library::createUser(const std::string& user_name, const std::string& user_surname){
+    long user_id = makeUserId();
+    User user(user_id, user_name, user_surname);
+    library_user_storage.push_back(user);
+
+    std::cout<<"Utworzono nowego uzytkownika: "<<user_name<<" "<<user_surname<<" o ID: "<<user_id<<std::endl;
+}
