@@ -26,7 +26,7 @@ int main()
             std::string user_name;
             std::string user_surname;
             std::cout<<"Podaj imie: ";
-            std::getline(std::cin, user_name);
+            std::getline(std::cin>>std::ws, user_name);
             std::cout<<"Podaj nazwisko: ";
             std::getline(std::cin, user_surname);
             admin.createUser(user_name, user_surname);            
@@ -39,7 +39,7 @@ int main()
             std::string book_author;
             int year = -1;
             std::cout<<"Podaj tytul ksiazki: ";
-            std::getline(std::cin, book_title);
+            std::getline(std::cin>>std::ws, book_title);
             std::cout<<"Podaj autora ksiazki: ";
             std::getline(std::cin, book_author);
             std::cout<<"Podaj rok wydania ksiazki: ";
@@ -50,6 +50,7 @@ int main()
         }
 
         case 3:
+        admin.getAllBooks();
 
             break;
 

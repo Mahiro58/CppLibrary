@@ -16,6 +16,7 @@ void Library::getAllBooks(){
     int number = 1;
     for (Book book : library_book_storage){
         std::cout<<"Lp."<<number<<" Id: "<<book.getId()<<" "<<book.getTitle()<<" "<<book.getAuthor()<<" "<<book.getYear()<<" "<<book.showStatus()<<std::endl;
+        number++;
     }
 }
 
@@ -24,6 +25,7 @@ void Library::getAllUsers(){
     int number = 1;
     for (User user : library_user_storage){
         std::cout<<"Lp."<<number<<" "<<user.getUserName()<<" "<<user.getUserSurname()<<std::endl;
+        number++;
     }
 }
 
@@ -118,6 +120,7 @@ long Library::makeUserId(){
         for(User user : library_user_storage){
             if(user.getId() > current_highest_id){
                 current_highest_id = user.getId();
+                current_highest_id++;
             }
         }
         return current_highest_id++;
@@ -136,14 +139,15 @@ void Library::createUser(const std::string& user_name, const std::string& user_s
 }
 
 long Library::makeBookId(){
-    long current_highest_id;
+    long current_highest_id = 0;
     if(library_book_storage.size() > 0){
         for(Book book : library_book_storage){
             if(book.getId() > current_highest_id){
                 current_highest_id = book.getId();
+                current_highest_id++;
             }
         }
-        return current_highest_id++;
+        return current_highest_id;
     }
     else{
         return 1;
