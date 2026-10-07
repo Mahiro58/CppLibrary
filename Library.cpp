@@ -63,9 +63,15 @@ void Library::findBookWithTitle(std::string title){
     }
 }
 
-void Library::borrowBook(const Book& book){
-    library_borrowed_books.push_back(book);
-    std::cout<<"Ksiazka "<<book.getTitle()<<" autora "<<book.getAuthor()<<" zostala wypozyczona.\n";
+long Library::borrowBook(long id){
+    for(Book book : library_book_storage){
+        if(book.getId() == id){
+            library_book_storage.push_back(book);
+            std::cout<<"Ksiazka "<<book.getTitle()<<" autora "<<book.getAuthor()<<" zostala wypozyczona.\n";
+            return id;
+        }
+    }
+    throw std::runtime_error("Error: Nie znaleziono ksiazki o ID: " + id);
 }
 
 void Library::returnBook(long id){

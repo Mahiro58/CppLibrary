@@ -50,13 +50,19 @@ int main()
         }
 
         case 3:
-        admin.getAllBooks();
+            admin.getAllBooks();
 
             break;
 
-        case 4:
+        case 4: {
+            long book_id = 0;
+            admin.getAllBooks();
+            std::cout<<"Wybierz ID ksiazki ktora chcesz wypozyczyc: ";
+            std::cin>>book_id;
+            admin.borrowBook(book_id);
 
             break;
+        }
 
         case 5:
 
