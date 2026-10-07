@@ -21,12 +21,14 @@ class Library
         void displayBook(long id); // takes book id and shows title and author.
         bool checkUserId(long id);  // checks if there's user with the same id.
         void createUser(const std::string& user_name, const std::string& user_surname); // creates user.
+        void createBook(const std::string& book_title, const std::string& book_author, int year); // creates book.
 
 
     private:
         std::vector<Book> library_book_storage;
         std::vector<Book> library_borrowed_books;
         std::vector<User> library_user_storage;
-        long makeUserId(); // generates user id.
+        long makeUserId(); // generates unique user id.
+        long makeBookId(); // generates unique book id.
 
 };

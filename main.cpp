@@ -34,10 +34,21 @@ int main()
             break;
         }
 
-        case 2:
-
+        case 2: {
+            std::string book_title;
+            std::string book_author;
+            int year = -1;
+            std::cout<<"Podaj tytul ksiazki: ";
+            std::cin>>book_title;
+            std::cout<<"Podaj autora ksiazki: ";
+            std::cin>>book_author;
+            std::cout<<"Podaj rok wydania ksiazki: ";
+            std::cin>>year;
+            admin.createBook(book_title, book_author, year);
+        
             break;
-
+        }
+        
         case 3:
 
             break;

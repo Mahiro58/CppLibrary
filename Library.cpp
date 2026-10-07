@@ -134,3 +134,26 @@ void Library::createUser(const std::string& user_name, const std::string& user_s
 
     std::cout<<"Utworzono nowego uzytkownika: "<<user_name<<" "<<user_surname<<" o ID: "<<user_id<<std::endl;
 }
+
+long Library::makeBookId(){
+    long current_highest_id;
+    if(library_book_storage.size() > 0){
+        for(Book book : library_book_storage){
+            if(book.getId() > current_highest_id){
+                current_highest_id = book.getId();
+            }
+        }
+        return current_highest_id++;
+    }
+    else{
+        return 1;
+    }
+}
+
+void Library::createBook(const std::string& book_title, const std::string& book_author, int year){
+    long book_id = makeBookId();
+    Book book (book_id, book_title, book_author, year);
+    library_book_storage.push_back(book);
+
+    std::cout<<"Dodano ksiazke "<<book_title<<" autora "<<book_author<<" o ID: "<<book_id<<std::endl;
+}
