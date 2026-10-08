@@ -69,6 +69,7 @@ int main()
             break;
 
         case 6:
+            admin.getAllBorrowedBooks();
 
             break;
 

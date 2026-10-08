@@ -167,3 +167,11 @@ void Library::createBook(const std::string& book_title, const std::string& book_
 
     std::cout<<"Dodano ksiazke "<<book_title<<" autora "<<book_author<<" o ID: "<<book_id<<std::endl;
 }
+
+void Library::getAllBorrowedBooks(){
+    int number = 1;
+    for(Book book : library_borrowed_books){
+        std::cout<<"Lp."<<number<<" "<<book.getTitle()<<" "<<book.getAuthor()<<" o ID: "<<book.getId();
+        number++;
+    }
+}
