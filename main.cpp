@@ -57,14 +57,20 @@ int main()
         case 4: {
             long book_id = 0;
             admin.getAllBooks();
-            std::cout<<"Wybierz ID ksiazki ktora chcesz wypozyczyc: ";
+            std::cout<<"Wybierz ID ksiazki, ktora chcesz wypozyczyc: ";
             std::cin>>book_id;
             admin.borrowBook(book_id);
 
             break;
         }
 
-        case 5:
+        case 5: {
+            long book_id = 0;
+            admin.getAllBorrowedBooks();
+            std::cout<<"Wybierz ID ksiazki, ktora chce oddac: ";
+            std::cin>>book_id;
+            admin.returnBook(book_id);
+        }
 
             break;
 
