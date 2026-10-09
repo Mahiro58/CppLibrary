@@ -15,7 +15,7 @@ void Library::getAllBooks(){
     std::cout<<"Lista ksiazek: \n";
     int number = 1;
     for (Book book : library_book_storage){
-        std::cout<<"Lp."<<number<<" Id: "<<book.getId()<<" "<<book.getTitle()<<" "<<book.getAuthor()<<" "<<book.getYear()<<" "<<book.showStatus()<<std::endl;
+        std::cout<<"Lp."<<number<<" Id: "<<book.getId()<<" "<<book.getTitle()<<" autora "<<book.getAuthor()<<" "<<book.getYear()<<" "<<book.showStatus()<<std::endl;
         number++;
     }
 }
