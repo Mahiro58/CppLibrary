@@ -80,6 +80,7 @@ int main()
             break;
 
         case 7:
+            std::cout<<"Chwilowo brak opcji.\n";
 
             break;
 
