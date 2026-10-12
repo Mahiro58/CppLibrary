@@ -4,6 +4,7 @@
 
 #include "Book.hpp"
 #include "User.hpp"
+#include "Borrow.hpp"
 
 // Core business logic implementation
 
@@ -16,8 +17,8 @@ class Library
         void getAllUsers(); // shows all users in database.
         void findBookWithAuthor(std::string author); // a function to show author's all books in database.
         void findBookWithTitle(std::string title); // a function to show books with title.
-        long borrowBook(long id); // adds Book object to library_borrowed_books database.
-        void returnBook(long id); // removes Book object from library_borrowed_books database base on book's id.
+        void borrowBook(long user_id, long book_id); // adds Book object to library_borrowed_books database.
+        void returnBook(long book_id); // removes Book object from library_borrowed_books database base on book's id.
         void displayBook(long id); // takes book id and shows title and author.
         bool checkUserId(long id);  // checks if there's user with the same id.
         void createUser(const std::string& user_name, const std::string& user_surname); // creates user.
@@ -28,7 +29,7 @@ class Library
 
     private:
         std::vector<Book> library_book_storage;
-        std::vector<Book> library_borrowed_books;
+        std::vector<Borrow> library_borrowed_books;
         std::vector<User> library_user_storage;
         long makeUserId(); // generates unique user id.
         long makeBookId(); // generates unique book id.

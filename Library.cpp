@@ -63,21 +63,21 @@ void Library::findBookWithTitle(std::string title){
     }
 }
 
-long Library::borrowBook(long id){
+void Library::borrowBook(long user_id, long book_id){
     for(Book book : library_book_storage){
-        if(book.getId() == id){
-            library_book_storage.push_back(book);
+        if(book.getId() == book_id){
+            Borrow borrow{user_id, book_id};
+            library_borrowed_books.push_back(borrow);
             std::cout<<"Ksiazka "<<book.getTitle()<<" autora "<<book.getAuthor()<<" zostala wypozyczona.\n";
-            return id;
         }
     }
-    throw std::runtime_error("Error: Nie znaleziono ksiazki o ID: " + id);
+    throw std::runtime_error("Error: Nie znaleziono ksiazki o ID: " + book_id);
 }
 
-void Library::returnBook(long id){
+void Library::returnBook(long book_id){
     int book_index = -1;
-    for(int i = 0; Book check_book : library_borrowed_books){
-        if(check_book.getId() == id){
+    for(int i = 0; Borrow& check_book : library_borrowed_books){
+        if(check_book.getBookId() == book_id){
             book_index = i;
         }
         i++;
@@ -92,18 +92,8 @@ void Library::returnBook(long id){
 }
 
 void Library::displayBook(long id){
-    int number = 0;
-    for (Book book : library_borrowed_books){
-        if(id == book.getId()){
-            number++;
-            std::cout<<"Lp."<<number<<" "<<book.getTitle()<<" "<<book.getAuthor()<<std::endl;
-        }
-    }
-    if(number == 0){
-        std::cout<<"Brak wypozyczonych ksiazek.\n";
-    }
-    else{
-        std::cout<<"To wszystkie wypozyczone ksazki.\n";
+    for(Book& book : library_book_storage){
+        std::cout<<book.getTitle()<<" "<<book.getAuthor()<<" o ID: "<<book.getId();
     }
 }
 
@@ -170,9 +160,8 @@ void Library::createBook(const std::string& book_title, const std::string& book_
 
 void Library::getAllBorrowedBooks(){
     int number = 1;
-    for(Book book : library_borrowed_books){
-        std::cout<<"Lp."<<number<<" "<<book.getTitle()<<" "<<book.getAuthor()<<" o ID: "<<book.getId();
-        number++;
+    for(Borrow& book : library_borrowed_books){
+        displayBook(book.getBookId());
     }
 }
 
