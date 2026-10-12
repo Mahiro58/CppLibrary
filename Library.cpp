@@ -177,5 +177,10 @@ void Library::getAllBorrowedBooks(){
 }
 
 User* Library::getUserById(long id){
-
+    for(User user : library_user_storage){
+        if(user.getId() == id){
+            return &user;
+        }
+    }
+    return nullptr;
 }
