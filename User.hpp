@@ -23,6 +23,5 @@ class User
         long user_id;
         std::string user_name;
         std::string user_surname;
-        std::vector<long> user_storage;
 
 };
