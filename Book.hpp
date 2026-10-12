@@ -9,8 +9,8 @@ class Book
     public:
         Book(long id, const std::string& title, const std::string& author, int year);
         long getId() const;
-        std::string getTitle() const;
-        std::string getAuthor() const;
+        const std::string& getTitle() const;
+        const std::string& getAuthor() const;
         int getYear() const;
         bool getStatus() const;
         std::string showStatus(); // function to show book's available status, returns string.

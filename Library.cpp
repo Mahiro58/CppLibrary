@@ -175,3 +175,7 @@ void Library::getAllBorrowedBooks(){
         number++;
     }
 }
+
+User* Library::getUserById(long id){
+
+}

@@ -28,11 +28,11 @@ void User::removeBook(const Book& book){
     }
 }
 
-std::string User::getUserName() const{
+const std::string& User::getUserName() const{
     return user_name;
 }
 
-std::string User::getUserSurname() const{
+const std::string& User::getUserSurname() const{
     return user_surname;
 }
 

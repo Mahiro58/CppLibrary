@@ -11,11 +11,11 @@ long Book::getId() const{
     return book_id;
 }
 
-std::string Book::getTitle() const{
+const std::string& Book::getTitle() const{
     return book_title;
 }
 
-std::string Book::getAuthor() const{
+const std::string& Book::getAuthor() const{
     return book_author;
 }
 

@@ -15,8 +15,8 @@ class User
         void addBook(const Book& book); // function add book's id to user_storage.
         void removeBook(const Book& book); // function removes book's id from user_storage.
         void getBorrowedBooks(Library& display, const std::vector<long>& user_storage); // function shows user's all borrowed books.
-        std::string getUserName() const;
-        std::string getUserSurname() const;
+        const std::string& getUserName() const;
+        const std::string& getUserSurname() const;
         long getId() const;
 
     private:
