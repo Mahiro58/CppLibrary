@@ -116,7 +116,7 @@ int main()
             break;
 
         case 7:
-            std::cout<<"Chwilowo brak opcji.\n";
+            admin.getUserAllBorrowedBooks(current_user_id);
 
             break;
 
