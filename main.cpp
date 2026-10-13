@@ -95,7 +95,7 @@ int main()
             admin.getAllBooks();
             std::cout<<"Wybierz ID ksiazki, ktora chcesz wypozyczyc: ";
             std::cin>>book_id;
-            //admin.borrowBook(book_id);
+            admin.borrowBook(current_user_id, book_id);
 
             break;
         }
@@ -105,7 +105,7 @@ int main()
             admin.getAllBorrowedBooks();
             std::cout<<"Wybierz ID ksiazki, ktora chce oddac: ";
             std::cin>>book_id;
-            //admin.returnBook(book_id);
+            admin.returnBook(book_id);
         }
 
             break;
