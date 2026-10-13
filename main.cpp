@@ -7,6 +7,7 @@ int main()
     bool condition = true;
     int chooice = 0;
     long current_user_id = 0;
+    int menu_user_choice = 0;
     Library admin;
     while (condition)
     {
@@ -25,15 +26,14 @@ int main()
         {
         case 1: {
             bool menu_user = true;
-            int menu_user_choice = 0;
-
-            std::cout<<"1. Dodaj nowego uzytkownika.\n";
-            std::cout<<"2. Zmien obecnego uzytkownika.\n";
-            std::cout<<"3. Wyswietl wszystkich uzytkownikow.\n";
-            std::cout<<"4. Wyjscie z menu uzytkownikow.\n";
-            std::cin>>menu_user_choice;
-
             while(menu_user){
+
+                std::cout<<"1. Dodaj nowego uzytkownika.\n";
+                std::cout<<"2. Zmien obecnego uzytkownika.\n";
+                std::cout<<"3. Wyswietl wszystkich uzytkownikow.\n";
+                std::cout<<"4. Wyjscie z menu uzytkownikow.\n";
+                std::cin>>menu_user_choice;
+
                 switch (menu_user_choice)
                 {
                 case 1:{
@@ -51,6 +51,7 @@ int main()
                     admin.getAllUsers();
                     std::cout<<"Podaj ID uzytkownika na ktorego chcesz sie przelaczyc: ";
                     std::cin>>current_user_id;
+                    std::cout<<"Zmieniono na uzytkownika o ID: "<<current_user_id<<std::endl;
                     break;
 
                 case 3:
