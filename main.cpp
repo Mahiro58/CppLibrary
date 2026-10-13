@@ -6,11 +6,12 @@ int main()
 {
     bool condition = true;
     int chooice = 0;
+    long current_user_id = 0;
     Library admin;
     while (condition)
     {
         std::cout<<"Witaj w bibliotece.\n";
-        std::cout<<"1. Dodaj uzytkownika.\n";
+        std::cout<<"1. Menu uzytkownika.\n";
         std::cout<<"2. Dodaj ksiazke.\n";
         std::cout<<"3. Spis ksiazek.\n";
         std::cout<<"4. Wypozycz ksiazke.\n";
@@ -23,14 +24,48 @@ int main()
         switch (chooice)
         {
         case 1: {
-            std::string user_name;
-            std::string user_surname;
-            std::cout<<"Podaj imie: ";
-            std::getline(std::cin>>std::ws, user_name);
-            std::cout<<"Podaj nazwisko: ";
-            std::getline(std::cin, user_surname);
-            admin.createUser(user_name, user_surname);            
+            bool menu_user = true;
+            int menu_user_choice = 0;
+
+            std::cout<<"1. Dodaj nowego uzytkownika.\n";
+            std::cout<<"2. Zmien obecnego uzytkownika.\n";
+            std::cout<<"3. Wyswietl wszystkich uzytkownikow.\n";
+            std::cout<<"4. Wyjscie z menu uzytkownikow.\n";
+            std::cin>>menu_user_choice;
+
+            while(menu_user){
+                switch (menu_user_choice)
+                {
+                case 1:{
+                    std::string user_name;
+                    std::string user_surname;
+                    std::cout<<"Podaj imie: ";
+                    std::getline(std::cin>>std::ws, user_name);
+                    std::cout<<"Podaj nazwisko: ";
+                    std::getline(std::cin, user_surname);
+                    admin.createUser(user_name, user_surname);                
+                    
+                    break;
+                }
+                case 2:
+                    admin.getAllUsers();
+                    std::cout<<"Podaj ID uzytkownika na ktorego chcesz sie przelaczyc: ";
+                    std::cin>>current_user_id;
+                    break;
+
+                case 3:
+                    admin.getAllUsers();
+                    break;
+
+                case 4:
+                    menu_user = false;
+                    break;
+
+                default:
+                    break;
+                }
             
+            }
             break;
         }
 

@@ -24,7 +24,7 @@ void Library::getAllUsers(){
     std::cout<<"Lista uzytkownikow: \n";
     int number = 1;
     for (User user : library_user_storage){
-        std::cout<<"Lp."<<number<<" "<<user.getUserName()<<" "<<user.getUserSurname()<<std::endl;
+        std::cout<<"Lp."<<number<<" "<<user.getUserName()<<" "<<user.getUserSurname()<<" ID: "<<user.getId()<<std::endl;
         number++;
     }
 }
