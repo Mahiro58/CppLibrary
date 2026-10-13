@@ -173,3 +173,14 @@ User* Library::getUserById(long id){
     }
     return nullptr;
 }
+
+void Library::getUserAllBorrowedBooks(long user_id){
+    int number = 0;
+    for(Borrow& borrow : library_borrowed_books){
+        if(borrow.getUserId() == user_id){
+            number++;
+            std::cout<<"Lp."<<number;
+            displayBook(borrow.getBookId());
+        }
+    }
+}

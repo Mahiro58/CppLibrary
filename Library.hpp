@@ -25,6 +25,7 @@ class Library
         void createBook(const std::string& book_title, const std::string& book_author, int year); // creates book.
         void getAllBorrowedBooks(); // shows all borrowed books in database.
         User* getUserById(long id); // returns pointer to user if object exists.
+        void getUserAllBorrowedBooks(long user_id); // shows all borrowed books by current user.
 
 
     private:
