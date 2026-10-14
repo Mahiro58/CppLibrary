@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 #include "Library.hpp"
 
@@ -80,9 +81,21 @@ int main()
             std::cout<<"Podaj autora ksiazki: ";
             std::getline(std::cin, book_author);
             std::cout<<"Podaj rok wydania ksiazki: ";
-            std::cin>>year;
+            if(!(std::cin>>year)){
+                std::cout<<"Musisz podac liczbe.\n";
+
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
+            }
             std::cout<<"Podaj ilosc ksiazek: ";
-            std::cin>>quantity;
+            if(!(std::cin>>quantity)){
+                std::cout<<"Musisz podac liczbe.\n";
+
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
+            }
             admin.createBook(book_title, book_author, year, quantity);
         
             break;
