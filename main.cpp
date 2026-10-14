@@ -74,13 +74,16 @@ int main()
             std::string book_title;
             std::string book_author;
             int year = -1;
+            int quantity = 0;
             std::cout<<"Podaj tytul ksiazki: ";
             std::getline(std::cin>>std::ws, book_title);
             std::cout<<"Podaj autora ksiazki: ";
             std::getline(std::cin, book_author);
             std::cout<<"Podaj rok wydania ksiazki: ";
             std::cin>>year;
-            admin.createBook(book_title, book_author, year);
+            std::cout<<"Podaj ilosc ksiazek: ";
+            std::cin>>quantity;
+            admin.createBook(book_title, book_author, year, quantity);
         
             break;
         }

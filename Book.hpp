@@ -7,7 +7,7 @@
 class Book
 {
     public:
-        Book(long id, const std::string& title, const std::string& author, int year);
+        Book(long id, const std::string& title, const std::string& author, int year, int quantity);
         long getId() const;
         const std::string& getTitle() const;
         const std::string& getAuthor() const;
@@ -21,6 +21,7 @@ class Book
         std::string book_title;
         std::string book_author;
         int book_year;
+        int book_quantity;
         bool isAvailable;
 
 };

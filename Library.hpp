@@ -22,7 +22,7 @@ class Library
         void displayBook(long id); // takes book id and shows title and author.
         bool checkUserId(long id);  // checks if there's user with the same id.
         void createUser(const std::string& user_name, const std::string& user_surname); // creates user.
-        void createBook(const std::string& book_title, const std::string& book_author, int year); // creates book.
+        void createBook(const std::string& book_title, const std::string& book_author, int year, int quantity); // creates book.
         void getAllBorrowedBooks(); // shows all borrowed books in database.
         User* getUserById(long id); // returns pointer to user if object exists.
         void getUserAllBorrowedBooks(long user_id); // shows all borrowed books by current user.

@@ -150,9 +150,9 @@ long Library::makeBookId(){
     }
 }
 
-void Library::createBook(const std::string& book_title, const std::string& book_author, int year){
+void Library::createBook(const std::string& book_title, const std::string& book_author, int year, int quantity){
     long book_id = makeBookId();
-    Book book (book_id, book_title, book_author, year);
+    Book book (book_id, book_title, book_author, year, quantity);
     library_book_storage.push_back(book);
 
     std::cout<<"Dodano ksiazke "<<book_title<<" autora "<<book_author<<" o ID: "<<book_id<<std::endl;
