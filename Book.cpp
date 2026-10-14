@@ -4,6 +4,19 @@
 Book::Book(long id, const std::string& title, const std::string& author, int year, int quantity)
     : book_id(id), book_title(title), book_author(author), book_year(year), book_quantity(quantity), isAvailable(true)
 {
+    if(id < 0){
+        throw std::invalid_argument("ID musi byc dodatnie.");
+    }
+    if(title.empty()){
+        throw std::invalid_argument("Tytul nie moze byc pusty.");
+    }
+    if(author.empty()){
+        throw std::invalid_argument("Autor nie moze byc pusty.");
+    }
+    if(quantity < 0){
+        throw std::invalid_argument("Ilosc musi byc dodatnia.");
+    }
+
     std::cout<<"Utworzono nowa ksiazke."<<std::endl;
 }
 
