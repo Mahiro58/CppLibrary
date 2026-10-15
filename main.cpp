@@ -10,6 +10,7 @@ int main()
     long current_user_id = 0;
     int menu_user_choice = 0;
     Library admin;
+    admin.loadBooks();
     while (condition)
     {
         std::cout<<"Witaj w bibliotece.\n";
@@ -137,11 +138,13 @@ int main()
             break;
 
         case 9:
+            admin.saveBooks();
             std::cout<<"Do zobaczenia.\n";
             condition = false;
             break;
         
         default:
+            std::cout<<"Nie prawidlowa opcja.\n";
             break;
         }
     }
