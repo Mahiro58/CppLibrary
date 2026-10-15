@@ -40,6 +40,10 @@ bool Book::getStatus() const{
     return isAvailable;
 }
 
+int Book::getQuantity() const{
+    return book_quantity;
+}
+
 std::string Book::showStatus(){
     if (isAvailable == true){
         return "Dostepna";
