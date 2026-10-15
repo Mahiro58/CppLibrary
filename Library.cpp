@@ -184,3 +184,23 @@ void Library::getUserAllBorrowedBooks(long user_id){
         }
     }
 }
+
+void Library::saveBooks() const {
+
+    bool success = FileManager::saveBooks(
+        library_book_storage,
+        "books.txt"
+    );
+
+    if (success) {
+        std::cout << "Ksiazki zapisane!\n";
+    }
+}
+
+void Library::loadBooks() {
+
+    library_book_storage =
+        FileManager::loadBooks("books.txt");
+
+    std::cout << "Wczytano ksiazki!\n";
+}
