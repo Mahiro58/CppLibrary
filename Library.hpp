@@ -5,6 +5,7 @@
 #include "Book.hpp"
 #include "User.hpp"
 #include "Borrow.hpp"
+#include "FileManager.hpp"
 
 // Core business logic implementation
 
@@ -26,7 +27,8 @@ class Library
         void getAllBorrowedBooks(); // shows all borrowed books in database.
         User* getUserById(long id); // returns pointer to user if object exists.
         void getUserAllBorrowedBooks(long user_id); // shows all borrowed books by current user.
-
+        void saveBooks() const; // function to save book_storage vector to file.
+        void loadBooks(); // function to load book_storage from file.
 
     private:
         std::vector<Book> library_book_storage;
